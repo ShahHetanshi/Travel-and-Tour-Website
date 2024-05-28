@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights Details</title>
+</head>
+<body>
+    <h1>Flights Details</h1>
+    <label for="from-location">Enter your current location:</label>
+    <input type="text" id="from-location" placeholder="e.g., New York, London, etc.">
+    <button onclick="fetchFlights()">Search Flights</button>
+    <div id="flights-details"></div>
+    <script>
+        function fetchFlights() {
+            const fromLocation = document.getElementById('from-location').value;
+            const data = JSON.stringify({
+                search: fromLocation
+            });
+
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener('readystatechange', function () {
+                if (this.readyState === this.DONE) {
+                    const airports = JSON.parse(this.responseText);
+                    if (airports && airports.length > 0) {
+                        const airportCode = airports[0].code;
+                        fetch(`https://airports.p.rapidapi.com/flights/${airportCode}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                const flightsDetailsElement = document.getElementById('flights-details');
+                                if (data && data.flights && data.flights.length > 0) {
+                                    flightsDetailsElement.innerHTML = '';
+                                    data.flights.forEach(flight => {
+                                        const flightDetails = `
+                                            <div>
+                                                <h3>Flight Number: ${flight.number}</h3>
+                                                <p>Departure Time: ${flight.departureTime}</p>
+                                                <p>Arrival Time: ${flight.arrivalTime}</p>
+                                                <p>Price: ${flight.price}</p>
+                                            </div>
+                                        `;
+                                        flightsDetailsElement.innerHTML += flightDetails;
+                                    });
+                                } else {
+                                    flightsDetailsElement.innerHTML = '<p>No flights found.</p>';
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error fetching flights:', error);
+                            });
+                    }
+                }
+            });
+
+            xhr.open('POST', 'https://airports.p.rapidapi.com/search/term', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('X-RapidAPI-Key', '9681dfce48msh98569dd17fe4c3fp13fc35jsncaf57cfdfd5c');
+            xhr.setRequestHeader('X-RapidAPI-Host', 'airports.p.rapidapi.com');
+
+            xhr.send(data);
+        }
+    </script>
+</body>
+</html>

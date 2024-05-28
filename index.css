@@ -1,0 +1,132 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(25deg, #4ecdc4, #a8e6cf, #dcedc1, #ffd3b6, #ffaaa5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('pexels-roberto-nickson-2559941.jpg');
+    background-size: cover;
+    background-position: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+#content_container {
+    width: 30%;
+    height: 70%;
+}
+#form_container {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(255, 255, 255, 0.8);;
+    box-shadow: 0 0 50px -20px #000;
+    border-radius: 2%;
+
+    overflow: hidden;
+}
+
+#form_header_container {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(25deg, #8b572a, #4ecdc4, #42b3a2, #349d81, #258064, #166b50);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#form_header {
+    font-size: 24px;
+    font-family: 'Bowlby One SC', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: black;
+}
+#form_header1 {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+#form_content_container {
+    width: 100%;
+    height: 90%;
+
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 30px;
+}
+
+#form_content_inner_container {
+    width: 75%;
+    height: 100%;
+
+    float: left;
+
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #4ecdc4;
+    border-radius: 5px;
+    color: #333;
+    font-size: 16px;
+}
+
+#button_container {
+    width: 100%;
+    height: 10%;
+
+    background: linear-gradient(25deg, #8b572a, #4ecdc4, #42b3a2, #349d81, #258064, #166b50);
+    color: #fff;
+    word-spacing: normal;
+    float: left;
+
+    margin-top: 5px;
+}
+
+#button_container button {
+    width: 50%;
+    height: 100%;
+    float: left;
+
+    background: transparent;
+    color: inherit;
+
+    font-family: Montserrat;
+    letter-spacing: 1px;
+    font-weight: 900;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Button hover effect */
+#button_container button:hover {
+    background-color: rgb(236, 197, 124);
+    transform: scale(1.05);
+}
+@media screen and (max-width: 768px) {
+    #content_container {
+        width: 80%;
+    }
+}

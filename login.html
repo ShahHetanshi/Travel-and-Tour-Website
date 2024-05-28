@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Box</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #login-box {
+      width: 400px;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #16a085;
+      color: #fff;
+      font-weight: 500;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background: #138a6b;
+    }
+
+    .fas {
+      margin-right: 10px;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group input {
+      padding-right: 40px;
+    }
+
+    .form-group i {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="login-box">
+    <h1><i class="fas fa-user"></i>Sign up</h1>
+    <div class="form-group">
+      <input type="text" name="username" placeholder="Username" />
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="form-group">
+      <input type="text" name="email" placeholder="E-mail" />
+      <i class="fas fa-envelope"></i>
+    </div>
+    <div class="form-group">
+      <input type="password" name="password" placeholder="Password" />
+      <i class="fas fa-lock"></i>
+    </div>
+    <div class="form-group">
+      <input type="password" name="password2" placeholder="Retype password" />
+      <i class="fas fa-lock"></i>
+    </div>
+    <input type="submit" name="signup_submit" value="Sign me up" />
+  </div>
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBHYdIJs3u1EDDE3gDbXXQ3iAx_UMmhD8A",
+    authDomain: "travel-and-tour-3a02d.firebaseapp.com",
+    projectId: "travel-and-tour-3a02d",
+    storageBucket: "travel-and-tour-3a02d.appspot.com",
+    messagingSenderId: "177110559675",
+    appId: "1:177110559675:web:dbfd25a50429ca26e4729e",
+    measurementId: "G-E9P8R0LH11"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</html>

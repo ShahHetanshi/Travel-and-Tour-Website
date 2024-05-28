@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- Favicon -->
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Style CSS -->
+
+    <!-- Remixicon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    />
+    <!-- Remixicon -->
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Font Awesome -->
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Font -->
+
+    <title>Travel And Tour</title>
+
+    <style>
+      /* Style for dark mode */
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-container">
+      <video src="4.mp4" id="video-slider" loop autoplay muted></video>
+    </div>
+    <!-- Header Start -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="index1.html" class="nav_logo"><img src="./logo.png" alt="" /></a>
+
+        <div class="nav_menu" id="nav-menu">
+          <ul class="nav_list">
+            <div class="nav_item">
+              <a href="index.html" class="nav_link">Home</a>
+            </div>
+            <div class="nav_item">
+              <a href="#services" class="nav_link">Services</a>
+            </div>
+            <div class="nav_item">
+              <a href="#popular" class="nav_link">Popular</a>
+            </div>
+            <div class="nav_item">
+              <a href="#offer" class="nav_link">Offers</a>
+            </div>
+            <div class="nav_item">
+              <a href="#packages" class="nav_link">Packages</a>
+            </div>
+            <div class="nav_item">
+              <a href="#book" class="nav_link">Book</a>
+            </div>
+          </ul>
+          <div class="nav_close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+
+        <div class="nav_actions">
+          <!-- Search Button -->
+          <i class="ri-search-line nav_search" id="search-btn"></i>
+
+          <!-- Login Button -->
+          <a href="index1.html" onclick="login()"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+          <div id="username-display"></div>
+      
+          <div class="nav_toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+          </div>
+          <input
+            type="checkbox"
+            class="dark-mode-toggle"
+            id="dark-mode-toggle"
+          />
+          <label for="dark-mode-toggle" class="dark-mode-label">
+            <i class="fas fa-moon" id="moon-icon"></i>
+            <i class="fas fa-sun" id="sun-icon"></i>
+            <span class="ball" id="mode-toggle-ball"></span>
+          </label>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Header End -->
+
+    <!-- Main Section Start -->
+    <home class="home" id="home">
+      <div class="content">
+        <h3>adventure is worthwhile</h3>
+        <h3>Discover The World</h3>
+        <h1>Visit <span class="change-content"></span></h1>
+        <p style="font-size:18px">
+          <!-- Explore breathtaking natural wonders and vibrant cultural destinations 
+          with our curated travel experiences. <br>Whether you seek adventure in the great 
+          outdoors or relaxation on sun-kissed beaches, our expertly crafted itineraries
+           cater to every travel style. <br> -->
+           <h1 style="font-size: 22px; color: black;">Join us to create unforgettable memories </h1>
+           <h1>discover the beauty of our planet!!!</h1>
+        </p>
+        <a class="button" href="#packages">Explore</a>
+      </div>
+    </home>
+    <!-- Main Section End -->
+
+    <!-- Services Start -->
+    <section class="services" id="services">
+      <div class="main-text">
+        <h3><span>We Offer</span> Best Services</h3>
+      </div>
+
+      <div class="card-content">
+        <div class="row">
+          <img src="./plane.png" alt="" />
+          <div class="card-body">
+            <h3>Best Flights</h3>
+          </div>
+        </div>
+        <div class="row">
+          <img src="./hotel.png" alt="" />
+          <div class="card-body">
+            <h3>7/Star Hotels</h3>
+          </div>
+        </div>
+        <div class="row">
+          <img src="./food.png" alt="" />
+          <div class="card-body">
+            <h3>Fresh and Good Food</h3>
+          </div>
+        </div>
+        <div class="row">
+          <img src="./guide.png" alt="" />
+          <div class="card-body">
+            <h3>Tour Guide</h3>
+          </div>
+        </div>
+        <div class="row">
+          <img src="./adventure.png" alt="" />
+          <div class="card-body">
+            <h3>Adventure</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services End -->
+
+    <!-- Popular Place Start -->
+    <section class="popular" id="popular">
+      <div class="main-text">
+        <h3>Popular <span>Destination</span></h3>
+      </div>
+      <div class="card-content">
+        <div class="row">
+          <img src="./petra jordan.png" alt="" />
+        </div>
+        <div class="row">
+          <img src="./beach thailand.png" alt="" />
+        </div>
+        <div class="row">
+          <img src="./malaysia.png" alt="" />
+        </div>
+        <div class="row">
+          <img src="./paris france.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- Popular Place End -->
+
+    <!-- Special Offer Start -->
+    <section class="offer" id="offer">
+      <div class="offer-content">
+        <h6>Special Offer</h6>
+        <h3>3 Countries Tour In $15000</h3>
+        <h5>With <span>Flights, Hotels, Food, Tour Guide, Adventure</span></h5>
+        <p style="font-size: 15px;">
+          Experience the ultimate adventure with our exclusive 3 Countries Tour for just $15000. Explore the diverse cultures, breathtaking landscapes, and exciting activities across three amazing destinations. With included flights, luxurious accommodations, delicious meals, expert tour guides, and thrilling adventures, this offer promises 
+          an unforgettable journey. Book now and embark on the adventure of a lifetime!
+        </p>
+        <button id="btn"><a href="#book">BOOK NOW</a></button>
+      </div>
+      <div class="img">
+        <img src="./offer.png" alt="" />
+      </div>
+    </section>
+    <!-- Special Offer End -->
+
+    <!-- Packages Section Start -->
+    <section class="packages" id="packages">
+      <div class="heading">
+        <h3>Packages</h3>
+      </div>
+
+      <div class="card-content">
+        <div class="row">
+          <div class="card-body">
+            <div class="img">
+              <img src="./usa.png" alt="" />
+            </div>
+            <h3>
+              INDIA <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </h3>
+            <p>
+              Discover the wonders of India on our immersive tour experience!
+            </p>
+            <h5>$10000 <button onclick="window.location.href = 'https://indiatoursntravels.in/';">Book</button></h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-body">
+            <div class="img">
+              <img src="./china.png" alt="" />
+            </div>
+            <h3>
+              China <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </h3>
+            <p>
+              Explore the rich culture and stunning landscapes of China on our guided tour!
+            </p>
+            <h5>$10000 <button onclick="window.location.href = 'https://www.thomascook.in/holidays/international-tour-packages/china-tour-packages';">Book</button></h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-body">
+            <div class="img">
+              <img src="./spain.png" alt="" />
+            </div>
+            <h3>
+              Spain <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </h3>
+            <p>
+              Experience the vibrant culture and stunning beauty of Spain on our unforgettable tour!!
+            </p>
+            <h5>$10000 <button onclick="window.location.href = 'https://www.booking.com/country/es.en.html?aid=376632;label=es-ZA4r2imuGvVC54vF1YVKBAS394185051003:pl:ta:p1:p2:ac:ap:neg:fi:tikwd-14681842:lp9061762:li:dec:dm:ppccp=UmFuZG9tSVYkc2RlIyh9YYzu_e_JczYp-Jb-z87LzaM;ws=&gad_source=1&gclid=CjwKCAjwoPOwBhAeEiwAJuXRh2FUsBXLYHk08oJOCYM865Jm7k7JGjsEQxMy3s4rOCYYTbjuOmwGmRoCXt0QAvD_BwE';">Book</button></h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-body">
+            <div class="img">
+              <img src="./italy.png" alt="" />
+            </div>
+            <h3>
+              Italy <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </h3>
+            <p>
+              Discover the art, history, and culinary delights of Italy on our enchanting tour!
+            </p>
+            <h5>$10000 <button onclick="window.location.href = 'https://www.thomascook.in/holidays/international-tour-packages/italy-tour-packages';">
+              Book</button></h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-content" style="margin-top: 30px">
+        <div class="row">
+          <div class="card-body">
+            <div class="img">
+              <img src="./uk.png" alt="" />
+            </div>
+            <h3>
+              U Kingdom <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </h3>
+            <p>
+              Uncover the charm and history of the UK on our captivating tour!
+            </p>
+            <h5>$10000 <button onclick="window.location.href = 'https://www.easemytrip.com/holidays/europe-paid-packages/?utm_source=google&utm_medium=cpc&utm_campaign=Holiday-Europe-Package-Mobile&gad_source=1&gclid=CjwKCAjwoPOwBhAeEiwAJuXRhxMA7qRJJn3Xr1dawaMVNZ855fVH5a0Q0eoiI3pIhhQuPGHQNeKReRoCMysQAvD_BwE';">Book</button></h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-body">
+            <div class="img">
+              <img src="./turkey.png" alt="" />
+            </div>
+            <h3>
+              Turkey <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </h3>
+            <p>
+              Immerse yourself in the beauty and culture of Turkey on our captivating tour!
+            </p>
+            <h5>$10000 <button onclick="window.location.href = 'https://www.easemytrip.com/holidays/turkey-tours-packages/?utm_source=google&utm_medium=cpc&utm_campaign=Holiday-Turkey-Package&gad_source=1&gclid=CjwKCAjwoPOwBhAeEiwAJuXRh7ey4QeWnsPwUdIkXCAfhGsdexXlRR_XHtXJ66EYIGmD2RTSGlH8wRoCxxcQAvD_BwE';">Book</button></h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-body">
+            <div class="img">
+              <img src="./egypt.png" alt="" />
+            </div>
+            <h3>
+              Egypt <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </h3>
+            <p>
+              Unravel the mysteries of Egypt on our captivating tour!
+            </p>
+            <h5>$10000 <button onclick="window.location.href = 'https://www.booking.com/country/eg.en.html?aid=376632;label=eg-UcbcjMB8rWN*KpBQrg1qIwS126772979828:pl:ta:p1:p2:ac:ap:neg:fi:tiaud-146342138710:kwd-1237799041:lp9061762:li:dec:dm:ppccp=UmFuZG9tSVYkc2RlIyh9YYzu_e_JczYp-Jb-z87LzaM;ws=&gad_source=1&gclid=CjwKCAjwoPOwBhAeEiwAJuXRh8n9DfXohqyxq7W59tBlFx5w-6w3qn8xN5H0K5flMvGTsazI-9osNBoCb6oQAvD_BwE';">Book</button></h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-body">
+            <div class="img">
+              <img src="./Switzerland.png" alt="" />
+            </div>
+            <h3>
+              Switzerland <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </h3>
+            <p>
+              Experience the breathtaking beauty of Switzerland on our picturesque tour!
+            </p>
+            <h5>$10000 <button onclick="window.location.href = 'https://www.swisstours.com/';">Book</button></h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Packages Section End -->
+
+    <!-- Gallery Section Start -->
+    <!-- <section class="gallery" id="gallery">
+        <div class="main-text">
+            <h3>Photo <span>Gallery</span></h3>
+        </div>
+        <div class="card-content">
+            <div class="row">
+                <img src="./g1.png" alt="">
+            </div>
+            <div class="row">
+                <img src="./g2.png" alt="">
+            </div>
+            <div class="row">
+                <img src="./g3.png" alt="">
+            </div>
+            <div class="row">
+                <img src="./g4.png" alt="">
+            </div>
+            <div class="row">
+                <img src="./g5.png" alt="">
+            </div>
+        </div>
+    </section> -->
+    <!-- Gallery Section End -->
+
+    <!-- Reviews Section Start -->
+    <section class="reviews" id="reviews">
+      <h3>What Our <span>Customers Say</span></h3>
+      <div class="review-card">
+        <div class="row">
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p>
+            The 3 Countries Tour surpassed all my expectations. 
+            The itinerary was well-planned, allowing us to see the best of each 
+            country without feeling rushed. The accommodations were top-notch, and 
+            the included activities were so much fun. This tour exceeded all my expectations!
+          </p>
+          <h6><img src="./Avatar Image.png" alt="" />Siddh Doshi</h6>
+        </div>
+        <div class="row">
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p>
+            I had the most amazing time on the 3 Countries Tour. 
+            The itinerary was well-planned, allowing us to see the best of each 
+            country without feeling rushed. The accommodations were top-notch, and 
+            the included activities were so much fun. This tour exceeded all my expectations!
+          </p>
+
+          <h6><img src="./Avatar Image (1).png" alt="" />Dukss Govani</h6>
+        </div>
+        <div class="row">
+          <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p>
+            Booking the 3 Countries Tour was the best decision I've made. 
+            The tour was well-organized, and I felt safe and taken care of 
+            throughout the trip. The tour guides were fantastic, providing 
+            interesting insights and ensuring we had a great time. I can't 
+            wait to book another tour with this company!
+          </p>
+
+          <h6><img src="./Avatar Image (2).png" alt="" />Darshil Thakkar</h6>
+        </div>
+      </div>
+    </section>
+    <!-- Reviews Section End -->
+    <section class="slider" id="slider">
+      <input type="radio" name="slider" id="s1" checked />
+      <input type="radio" name="slider" id="s2" />
+      <input type="radio" name="slider" id="s3" />
+      <input type="radio" name="slider" id="s4" />
+      <input type="radio" name="slider" id="s5" />
+
+      <label for="s1" id="slide1"><img src="./g1.png" alt="" /></label>
+      <label for="s2" id="slide2"><img src="./g2.png" alt="" /></label>
+      <label for="s3" id="slide3"><img src="./g3.png" alt="" /></label>
+      <label for="s4" id="slide4"><img src="./g4.png" alt="" /></label>
+      <label for="s5" id="slide5"><img src="./g5.png" alt="" /></label>
+    </section>
+
+    <!-- Book Section Start -->
+    <section class="book" id="book">
+      <div class="book-info">
+        <h3><span>Book</span> Now</h3>
+        <p>
+          For booking travel, you can use various platforms such as travel websites, 
+          apps, or directly contact travel agencies. Ensure to have your travel dates, 
+          destination, and any specific preferences ready for a smoother booking process.
+        </p>
+        <div class="list">
+          <li><a href="#">+91 1234567894</a></li>
+          <li><a href="#">airtravel108@gmail.com</a></li>
+          <li><a href="#">Hetanshi Shah Vatsala Shah</a></li>
+          <li><a href="#">22BCE323 22BCE328</a></li>
+        </div>
+        <div class="social">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+
+      <div class="book-form">
+        <form id="bookingForm" action="#">
+          <input type="text" id="name" placeholder="Name" required />
+          <input type="number" id="phone" placeholder="Phone"  required/>
+          <input type="text" id="place" placeholder="Place" required />
+          <input type="number" id="amount" placeholder="How Much" required />
+          <textarea
+            id="details"
+            cols="35"
+            rows="5"
+            placeholder="Share Your Full Details"
+            required
+          ></textarea>
+          <input type="submit" value="Book" class="submit" required />
+        </form>
+      </div>
+    </section>
+    <!-- Book Section End -->
+
+    <!-- Footer Start -->
+    <footer>
+      <div class="content">
+        <div class="left box">
+          <div class="upper">
+            <div class="topic">About us</div>
+            <p>
+              At our travel agency, we believe in the transformative power of 
+              travel. We strive to create unforgettable experiences for our customers, 
+              allowing them to discover the world's wonders while creating lasting memories.
+              With expertly crafted itineraries, top-notch accommodations, and exceptional 
+              customer service, we are dedicated to making every journey a truly remarkable one.
+            </p>
+          </div>
+          <div class="lower">
+            <div class="topic">Contact us</div>
+            <div class="phone">
+              <a href="#"
+                ><i class="fas fa-phone-volume"></i>+91 1234567894</a
+              >
+            </div>
+            <div class="phone">
+              <a href="#"><i class="fas fa-envelope"></i>airtravels108@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle box">
+          <div class="topic">UseFull Links</div>
+          <div><a href="#">Home</a></div>
+          <div><a href="#">Services</a></div>
+          <div><a href="#">Popular</a></div>
+          <div><a href="#">Offers</a></div>
+        </div>
+
+        <div class="right box">
+          <div class="topic">Join us</div>
+          <input type="text" placeholder="Enter Your Email" />
+          <button>Subscribe</button>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Go To Top -->
+    <div class="go-to-top">
+      <a href="#header"><i class="ri-arrow-up-line"></i></a>
+    </div>
+    <!-- Go To Top -->
+
+    <!-- Custom Js -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var fullname=sessionStorage.getItem("Username");
+        console.log(fullname);  
+        document.getElementById("username-display").textContent=fullname;
+      });
+      
+      const moonIcon = document.getElementById("moon-icon");
+      const sunIcon = document.getElementById("sun-icon");
+      const toggleBall = document.getElementById("mode-toggle-ball");
+      const darkModeToggle = document.getElementById("dark-mode-toggle");
+      const body = document.body;
+
+      const toggleDarkMode = () => {
+        if (body.classList.contains("dark-mode")) {
+          body.classList.remove("dark-mode");
+          moonIcon.style.display = "block";
+          sunIcon.style.display = "none";
+          toggleBall.style.left = "0";
+        } else {
+          body.classList.add("dark-mode");
+          moonIcon.style.display = "none";
+          sunIcon.style.display = "block";
+          toggleBall.style.left = "20px";
+        }
+      };
+      const form = document.getElementById('bookingForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get form values
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const place = document.getElementById('place').value;
+      const amount = document.getElementById('amount').value;
+      const details = document.getElementById('details').value;
+
+      // Validate form fields
+      if (!form.checkValidity()) {
+        // If form is not valid, display error message or perform other actions
+        alert('Please fill out all fields correctly.');
+        return;
+      }
+
+      // Validate phone number
+      if (phone.length !== 10) {
+        alert('Mobile number should be exactly 10 digits long.');
+        return;
+      }
+
+      // Create an object to store form data
+      const formData = {
+        name: name,
+        phone: phone,
+        place: place,
+        amount: amount,
+        details: details
+      };
+
+      // Convert object to JSON string
+      const formDataJSON = JSON.stringify(formData);
+
+      // Store form data in local storage
+      localStorage.setItem('bookingData', formDataJSON);
+
+      // Optionally, you can clear the form after submission
+      form.reset();
+
+      // Redirect to a different page or perform any other action
+      window.location.href = 'https://indiatoursntravels.in/';
+    });
+      darkModeToggle.addEventListener("click", toggleDarkMode);
+      const navMenu = document.getElementById("nav-menu"),
+        navToggle = document.getElementById("nav-toggle"),
+        navClose = document.getElementById("nav-close");
+      const container = document.querySelector(".container");
+
+      // Menu Show
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.add("show-menu");
+      });
+
+      // Menu Hidden
+      navClose.addEventListener("click", () => {
+        navMenu.classList.remove("show-menu");
+      });
+      // Sticky Header
+      window.addEventListener("scroll", function () {
+        header.classList.toggle("sticky", window.scrollY > 90);
+      });
+
+      // Search
+      const search = document.getElementById("search"),
+      searchBtn = document.getElementById("search-btn"),
+      searchClosen = document.getElementById("search-close");
+
+      // Search Show
+      searchBtn.addEventListener("click", () => {
+        search.classList.add("show-search");
+      });
+
+      // Search Hidden
+
+      searchClosen.addEventListener("click", () => {
+        search.classList.remove("show-search");
+      });
+    </script>
+    <!-- Custom Js -->
+  </body>
+</html>

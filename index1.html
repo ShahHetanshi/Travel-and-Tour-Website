@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <!-- Cool Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div id="content_container">
+        <div id="form_container">
+            <div id="form_header_container">
+                <h2 id="form_header"> Login </h2>
+            </div>
+
+            <div id="form_content_container">
+                <div id="form_content_inner_container">
+                    <input type="text" id="full_name" placeholder="Full Name">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="tel" id="mobile_number" placeholder="Mobile Number">
+                    <input type="password" id="password" placeholder="Password">
+                    <input type="date" id="dob" placeholder="Date of Birth">
+
+                    <div id="button_container">
+                        <button onclick="login()">Login</button>
+                        <button onclick="register()">Register</button>
+                        <!-- <button id="SignInButton">Create Account? Sign In</button>
+                        <button id="SignOutButton">Sign Out</button> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <id="message">
+        You have logged In!
+    </id> -->
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+<!-- Our script must be loaded after firebase references -->
+<script>
+    // Your Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBHYdIJs3u1EDDE3gDbXXQ3iAx_UMmhD8A",
+        authDomain: "travel-and-tour-3a02d.firebaseapp.com",
+        projectId: "travel-and-tour-3a02d",
+        storageBucket: "travel-and-tour-3a02d.appspot.com",
+        messagingSenderId: "177110559675",
+        appId: "1:177110559675:web:dbfd25a50429ca26e4729e",
+        measurementId: "G-E9P8R0LH11"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Initialize variables
+    const auth = firebase.auth()
+    const database = firebase.database()
+    firebase.initializeApp(firebaseConfig);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const SignInButton=document.getElementById("SignInButton");
+    const SignOutButton=document.getElementById("SignOutButton");
+    const message=document.getElementById("message");
+
+    const userSignIn=async()=>{
+        signInWithPop(auth,provider)
+        .then((result)=>{
+            const user=result.user
+            console.log(user);
+            SignInButton.innerHTML = `Signed in as ${user.displayName}`;
+        }).catch((error) => {
+            const errorCode=error.code;
+            const errorMessage=error.message;
+        })
+    }
+    const userSignOut=async()=>{
+        signOut(auth).then(()=>{
+            alert("You have signed out successfully!");
+        }
+    ).catch((error)=>{})
+    }
+
+    onAuthStateChanged(auth,(user)=>
+    {
+        if(user)
+        {
+            alert("You have signed in!");
+        }
+        else{
+
+        }
+    })
+
+    SignInButton.addEventListener('click',userSignIn);
+    SignOutButton.addEventListener('click',userSignOut);
+    
+    // Set up our register function
+    function register() {
+        // Get all our input fields
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
+        const full_name = document.getElementById('full_name').value
+        const mobile_number = document.getElementById('mobile_number').value
+        const dob = document.getElementById('dob').value
+
+        // Validate input fields
+        if (validate_email(email) == false || validate_password(password) == false) {
+            alert('Email or Password is Outta Line!!')
+            return
+        }
+        if (validate_field(full_name) == false || validate_field(mobile_number) == false || validate_field(dob) == false) {
+            alert('One or More Extra Fields is Outta Line!!')
+            return
+        }
+
+        // Move on with Auth
+        auth.createUserWithEmailAndPassword(email, password)
+            .then(function () {
+                // Declare user variable
+                var user = auth.currentUser
+
+                // Add this user to Firebase Database
+                var database_ref = database.ref()
+
+                // Create User data
+                var user_data = {
+                    email: email,
+                    full_name: full_name,
+                    mobile_number: mobile_number,
+                    dob: dob,
+                    last_login: Date.now()
+                }
+
+                // Push to Firebase Database
+                database_ref.child('users/' + user.uid).set(user_data)
+
+                // Done
+                alert('User Created!!')
+            })
+            .catch(function (error) {
+                // Firebase will use this to alert of its errors
+                var error_message = error.message
+
+                alert(error_message)
+            })
+    }
+
+    // Set up our login function
+    function login() {
+        // Get all our input fields
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
+
+        // Validate input fields
+        if (validate_email(email) == false || validate_password(password) == false) {
+            alert('Email or Password is Outta Line!!')
+            return
+        }
+
+        auth.signInWithEmailAndPassword(email, password)
+            .then(function () {
+                // Declare user variable
+                var user = auth.currentUser
+
+                // Add this user to Firebase Database
+                var database_ref = database.ref()
+
+                // Create User data
+                var user_data = {
+                    last_login: Date.now()
+                }
+
+                // Push to Firebase Database
+                database_ref.child('users/' + user.uid).update(user_data)
+
+                // Done
+                alert('User Logged In!!')
+
+            })
+            .then(()=>{
+                sessionStorage.clear();
+                sessionStorage.setItem("Username",document.getElementById("full_name").value);
+                window.location.replace('index.html');
+            })
+            .catch(function (error) {
+                // Firebase will use this to alert of its errors
+                var error_message = error.message
+
+                alert(error_message)
+            })
+    }
+
+    // Validate Functions
+    function validate_email(email) {
+        expression = /^[^@]+@\w+(\.\w+)+\w$/
+        return expression.test(email)
+    }
+
+    function validate_password(password) {
+        return password.length >= 6
+    }
+
+    function validate_field(field) {
+        return field.trim() !== ''
+    }
+</script>
+</html>
